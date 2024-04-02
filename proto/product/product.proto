@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.demogo.grpc.product;
+option go_package = "demogo/internal/proto/product";
+
+service ProductService {
+  rpc GetProductByID(GetProductIDRequest) returns (GetProductIDResponse);
+  rpc SaveProduct(SaveProductRequest) returns (SaveProductResponse);
+}
+
+message Product {
+  int64 id = 1;
+  string name = 2;
+  double price = 3;
+}
+
+message GetProductIDRequest {
+  int64 id = 1;
+}
+
+message GetProductIDResponse {
+  Product data = 1;
+  repeated string message = 2;
+}
+
+message SaveProductRequest {
+  Product data = 1;
+}
+
+message SaveProductResponse {
+  Product data = 1;
+  repeated string message = 3;
+}
