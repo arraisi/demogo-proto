@@ -1,4 +1,4 @@
-module demogo-proto
+module github.com/arraisi/demogo-proto
 
 go 1.21
 
